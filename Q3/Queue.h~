@@ -1,0 +1,26 @@
+#include<iostream>
+#include<iomanip>
+#include<string>
+#include"sstream"
+
+class Queue
+{
+ public:
+
+  Queue(std::string n);
+  void displayQueue();
+  void enQueue(double t);
+  double deQueue(); ///
+  ~Queue();
+
+
+ private:
+
+  int length{};
+  std::string name{};
+  double* p{};
+  int r{};
+  int w{};
+
+};
+
