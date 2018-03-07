@@ -1,0 +1,59 @@
+#include<iostream>
+#include<cmath>
+#include<iomanip>
+
+void selectsort(int*& , int );
+
+int main()
+{
+  int n{};
+  int i{};
+  int arr{new int(n)};
+  std::cout<<"please enter your numbers (enter 0 to end):"<<std::endl;
+  while(1)
+    {
+      std::cout<<"enter\t"<< n <<"th number:"<<std::endl;
+      std::cin>> arr[i];
+      if(arr[i] == 0)
+	break;
+      i++;
+      n+=1;
+    }
+  
+  selectsort(arr , n);
+  for(int i{}; i<=n; i++)
+    std::cout<< arr[i] << std::endl;
+
+
+
+
+
+  return 0;
+
+}
+
+
+
+void selectsort(int*& arr , int n)
+{
+  int min{};
+  int num{};
+  int save{};
+  for (int i{}; i<n; i++)
+  {
+      min = arr[i];
+      num = n;
+      for (int j{i+1}; j<=n; j++)
+      {
+	if( min > arr[j] )
+	{
+	  min = arr[j];
+	  num = j;
+	}
+      }
+      
+      save = arr[i];
+      arr[i] = min;
+      arr[num] = save;
+  }
+}
